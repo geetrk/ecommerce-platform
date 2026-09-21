@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: ecommerce-platform
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce-db
+    username: jelly
+    password: jelly
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+#  h2:
+#    console:
+#      enabled: true
+#
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+
+#  datasource:
+#    url: jdbc:h2:mem:ecommerce-db
+
+
+server:
+  port: 8081
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+        show-details: always
+  info:
+    env:
+      enabled: true
+
+  shutdown: graceful
+
+info:
+  app:
+    name: My E-commerce Platform
+    description: A simple e-commerce platform application by Geet
+    version: 1.0.0
+
